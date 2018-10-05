@@ -1,5 +1,5 @@
 //
-//  CurrenciesTableViewCell.swift
+//  CurrencyTableViewCell.swift
 //  CurrenciesCalculator
 //
 //  Created by i.zarubin on 05/10/2018.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class CurrenciesTableViewCell: UITableViewCell {
+final class CurrencyTableViewCell: UITableViewCell {
     private var didSetupConstraints = false
-    private var model: CurrenciesCellViewModel?
+    private var model: CurrencyCellViewModel?
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -39,7 +39,7 @@ final class CurrenciesTableViewCell: UITableViewCell {
         initialSetup()
     }
 
-    func configure(with model: CurrenciesCellViewModel) {
+    func configure(with model: CurrencyCellViewModel) {
         titleLabel.text = model.title
         textField.text = model.value
         if model.editing {
@@ -61,7 +61,7 @@ final class CurrenciesTableViewCell: UITableViewCell {
     }
 }
 
-private extension CurrenciesTableViewCell {
+private extension CurrencyTableViewCell {
     func initialSetup() {
         contentView.addSubview(titleLabel)
         contentView.addSubview(textField)

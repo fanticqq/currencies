@@ -1,5 +1,5 @@
 //
-//  CurrenciesCellViewModel.swift
+//  CurrencyCellViewModel.swift
 //  CurrenciesCalculator
 //
 //  Created by i.zarubin on 05/10/2018.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-final class CurrenciesCellViewModel {
+final class CurrencyCellViewModel {
     let title: String
     var editing: Bool = false
     var value: String
-    var onChangeText: ((CurrenciesCellViewModel, String) -> Void)?
-    var onSelectCurrency: ((CurrenciesCellViewModel, Int) -> Void)?
+    var onChangeText: ((CurrencyCellViewModel, String) -> Void)?
+    var onSelectCurrency: ((CurrencyCellViewModel, Int) -> Void)?
 
     init(title: String, value: String) {
         self.title = title

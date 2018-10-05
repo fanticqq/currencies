@@ -13,7 +13,7 @@ final class CurrenciesCalculatorViewStub: CurrenciesCalculatorViewInput {
     var output: CurrenciesCalculatorViewOutput!
     var loading: Bool = false
     var error: Error?
-    var data = [CurrenciesCellViewModel]()
+    var data = [CurrencyCellViewModel]()
     
     func loadView() {
         output.didLoadView()
@@ -27,7 +27,7 @@ final class CurrenciesCalculatorViewStub: CurrenciesCalculatorViewInput {
         self.error = error
     }
     
-    func display(data: [CurrenciesCellViewModel]) {
+    func display(data: [CurrencyCellViewModel]) {
         self.data = data
     }
     

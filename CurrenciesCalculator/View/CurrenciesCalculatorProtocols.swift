@@ -11,7 +11,7 @@ import Foundation
 protocol CurrenciesCalculatorViewInput: AnyObject {
     func display(loading: Bool)
     func display(error: Error)
-    func display(data: [CurrenciesCellViewModel])
+    func display(data: [CurrencyCellViewModel])
     func moveCell(from oldIndex: Int, to newIndex: Int)
 }
 

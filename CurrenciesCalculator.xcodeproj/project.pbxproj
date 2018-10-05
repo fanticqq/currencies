@@ -20,9 +20,9 @@
 		BB038A40216767B20048F3F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB038A3F216767B20048F3F5 /* Assets.xcassets */; };
 		BB038A43216767B20048F3F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB038A41216767B20048F3F5 /* LaunchScreen.storyboard */; };
 		BB038A4E216767B30048F3F5 /* CurrenciesCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB038A4D216767B30048F3F5 /* CurrenciesCalculatorTests.swift */; };
-		BB038A5A216768490048F3F5 /* CurrenciesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB038A59216768490048F3F5 /* CurrenciesTableViewCell.swift */; };
+		BB038A5A216768490048F3F5 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB038A59216768490048F3F5 /* CurrencyTableViewCell.swift */; };
 		BB038A5C2167699F0048F3F5 /* ViewSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB038A5B2167699F0048F3F5 /* ViewSize.swift */; };
-		BB038A5E21676B420048F3F5 /* CurrenciesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB038A5D21676B420048F3F5 /* CurrenciesCellViewModel.swift */; };
+		BB038A5E21676B420048F3F5 /* CurrencyCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB038A5D21676B420048F3F5 /* CurrencyCellViewModel.swift */; };
 		BB038A602167873D0048F3F5 /* CurrenciesDataDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB038A5F2167873D0048F3F5 /* CurrenciesDataDisplayManager.swift */; };
 		BB038A6821678FC40048F3F5 /* CurrenciesCalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB038A6221678FC40048F3F5 /* CurrenciesCalculatorPresenter.swift */; };
 		BB038A6A21678FC40048F3F5 /* CurrenciesCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB038A6421678FC40048F3F5 /* CurrenciesCalculatorViewController.swift */; };
@@ -63,9 +63,9 @@
 		BB038A49216767B30048F3F5 /* CurrenciesCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrenciesCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB038A4D216767B30048F3F5 /* CurrenciesCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesCalculatorTests.swift; sourceTree = "<group>"; };
 		BB038A4F216767B30048F3F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BB038A59216768490048F3F5 /* CurrenciesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesTableViewCell.swift; sourceTree = "<group>"; };
+		BB038A59216768490048F3F5 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
 		BB038A5B2167699F0048F3F5 /* ViewSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSize.swift; sourceTree = "<group>"; };
-		BB038A5D21676B420048F3F5 /* CurrenciesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesCellViewModel.swift; sourceTree = "<group>"; };
+		BB038A5D21676B420048F3F5 /* CurrencyCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCellViewModel.swift; sourceTree = "<group>"; };
 		BB038A5F2167873D0048F3F5 /* CurrenciesDataDisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesDataDisplayManager.swift; sourceTree = "<group>"; };
 		BB038A6221678FC40048F3F5 /* CurrenciesCalculatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesCalculatorPresenter.swift; sourceTree = "<group>"; };
 		BB038A6421678FC40048F3F5 /* CurrenciesCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesCalculatorViewController.swift; sourceTree = "<group>"; };
@@ -196,8 +196,8 @@
 		BB038A58216768070048F3F5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				BB038A59216768490048F3F5 /* CurrenciesTableViewCell.swift */,
-				BB038A5D21676B420048F3F5 /* CurrenciesCellViewModel.swift */,
+				BB038A59216768490048F3F5 /* CurrencyTableViewCell.swift */,
+				BB038A5D21676B420048F3F5 /* CurrencyCellViewModel.swift */,
 				BB038A5B2167699F0048F3F5 /* ViewSize.swift */,
 			);
 			path = Cells;
@@ -335,7 +335,7 @@
 				BB038A5C2167699F0048F3F5 /* ViewSize.swift in Sources */,
 				BB038A7621679F910048F3F5 /* Result.swift in Sources */,
 				BB038A602167873D0048F3F5 /* CurrenciesDataDisplayManager.swift in Sources */,
-				BB038A5E21676B420048F3F5 /* CurrenciesCellViewModel.swift in Sources */,
+				BB038A5E21676B420048F3F5 /* CurrencyCellViewModel.swift in Sources */,
 				BB038A702167909D0048F3F5 /* Currency.swift in Sources */,
 				39849A0B2167EA33005AE113 /* Sampler.swift in Sources */,
 				BB038A6A21678FC40048F3F5 /* CurrenciesCalculatorViewController.swift in Sources */,
@@ -343,7 +343,7 @@
 				BB038A6C21678FC40048F3F5 /* CurrenciesCalculatorInteractor.swift in Sources */,
 				BB038A72216792CF0048F3F5 /* NetworkClient.swift in Sources */,
 				BB038A6D21678FC40048F3F5 /* CurrenciesCalculatorContainer.swift in Sources */,
-				BB038A5A216768490048F3F5 /* CurrenciesTableViewCell.swift in Sources */,
+				BB038A5A216768490048F3F5 /* CurrencyTableViewCell.swift in Sources */,
 				BB038A7421679F3D0048F3F5 /* CurrenciesService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,17 +11,17 @@ import UIKit
 final class CurrenciesDataDisplayManager: NSObject {
 
     private let tableView: UITableView
-    private var dataSource = [CurrenciesCellViewModel]()
+    private var dataSource = [CurrencyCellViewModel]()
 
     init(tableView: UITableView) {
         self.tableView = tableView
         super.init()
-        tableView.register(CurrenciesTableViewCell.self, forCellReuseIdentifier: String(describing: CurrenciesTableViewCell.self))
+        tableView.register(CurrencyTableViewCell.self, forCellReuseIdentifier: String(describing: CurrencyTableViewCell.self))
         tableView.delegate = self
         tableView.dataSource = self
     }
 
-    func reload(data: [CurrenciesCellViewModel]) {
+    func reload(data: [CurrencyCellViewModel]) {
         guard !dataSource.isEmpty else {
             dataSource = data
             tableView.reloadData()
@@ -49,7 +49,7 @@ extension CurrenciesDataDisplayManager: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CurrenciesTableViewCell.self), for: indexPath) as? CurrenciesTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CurrencyTableViewCell.self), for: indexPath) as? CurrencyTableViewCell else {
             fatalError("Unable to dequeue cell")
         }
         let model = dataSource[indexPath.row]

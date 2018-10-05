@@ -32,7 +32,7 @@ extension CurrenciesCalculatorPresenter: CurrenciesCalculatorInteractorOutput {
     func didReceive(currencies: [Currency]) {
         let selectedModel = makeModel(from: selectedCurrency)
         selectedModel.editing = true
-        var models: [CurrenciesCellViewModel] = [selectedModel]
+        var models: [CurrencyCellViewModel] = [selectedModel]
         models.append(contentsOf: currencies.map(makeModel(from:)))
 
         view?.display(data: models)
@@ -49,29 +49,40 @@ extension CurrenciesCalculatorPresenter: CurrenciesCalculatorInteractorOutput {
 }
 
 private extension CurrenciesCalculatorPresenter {
-    func makeModel(from currency: Currency) -> CurrenciesCellViewModel {
-        let model = CurrenciesCellViewModel(title: currency.name, value: price(for: currency))
+    func makeModel(from currency: Currency) -> CurrencyCellViewModel {
+        let model = CurrencyCellViewModel(title: currency.name, value: price(for: currency))
         model.onChangeText = { [weak self] (model, text) in
             guard let weakSelf = self else {
                 return
             }
-            let value = Double(text) ?? 0
-            weakSelf.inputValue = value
-            model.value = weakSelf.price(for: currency)
-            weakSelf.interactor.scheduleObtaining(for: weakSelf.selectedCurrency)
+            weakSelf.processTextChanging(text, for: model)
         }
         model.onSelectCurrency = { [weak self] model, index in
-            guard let weakSelf = self, let value = Double(model.value) else {
+            guard let weakSelf = self else {
                 return
             }
-            let selectedCurrency = Currency(name: currency.name, multiplier: 1)
-            model.editing = true
-            weakSelf.selectedCurrency = selectedCurrency
-            weakSelf.inputValue = value
-            weakSelf.view?.moveCell(from: index, to: 0)
-            weakSelf.interactor.obtainCurrencies(for: selectedCurrency)
+            weakSelf.processCurrencySelection(at: index, for: model, currency: currency)
         }
         return model
+    }
+    
+    func processTextChanging(_ text: String, for model: CurrencyCellViewModel) {
+        let value = Double(text) ?? 0
+        inputValue = value
+        model.value = price(for: selectedCurrency)
+        interactor.scheduleObtaining(for: selectedCurrency)
+    }
+    
+    func processCurrencySelection(at index: Int, for model: CurrencyCellViewModel, currency: Currency) {
+        guard let value = Double(model.value) else {
+            return
+        }
+        model.editing = true
+        let selectedCurrency = Currency(name: currency.name, multiplier: 1)
+        self.selectedCurrency = selectedCurrency
+        inputValue = value
+        view?.moveCell(from: index, to: 0)
+        interactor.obtainCurrencies(for: selectedCurrency)
     }
     
     func price(for currency: Currency) -> String {

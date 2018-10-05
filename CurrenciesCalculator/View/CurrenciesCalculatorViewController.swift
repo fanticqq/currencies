@@ -69,7 +69,7 @@ extension CurrenciesCalculatorViewController: CurrenciesCalculatorViewInput {
         present(alertController, animated: true, completion: nil)
     }
 
-    func display(data: [CurrenciesCellViewModel]) {
+    func display(data: [CurrencyCellViewModel]) {
         dataDisplayManager.reload(data: data)
     }
     
