@@ -8,18 +8,18 @@
 
 import Foundation
 
+enum ServiceError: Error {
+    case parseError
+}
+
 protocol CurrenciesServiceProtocol {
     func obtainCurrencies(for base: String, completion: @escaping ((Result<[Currency]>) -> Void))
 }
 
 final class CurrenciesService: CurrenciesServiceProtocol {
-    private let networkClient: NetworkClient
+    private let networkClient: NetworkClientProtocol
 
-    enum ServiceError: Error {
-        case parseError
-    }
-
-    init(networkClient: NetworkClient) {
+    init(networkClient: NetworkClientProtocol) {
         self.networkClient = networkClient
     }
 
@@ -28,12 +28,13 @@ final class CurrenciesService: CurrenciesServiceProtocol {
     }
 
     func obtainCurrencies(for base: String, completion: @escaping ((Result<[Currency]>) -> Void)) {
-        let task = networkClient.obtainData(from: .currencies(base: base)) { (result: Result<[String: Any]>) in
-
+        networkClient.obtainData(from: .currencies(base: base)) { (result) in
             switch result {
             case .success(let dict):
                 guard let rates = dict["rates"] as? [String: Double] else {
-                    completion(.error(ServiceError.parseError))
+                    DispatchQueue.main.async {
+                        completion(.error(ServiceError.parseError))
+                    }
                     return
                 }
                 let currencies = rates.map({ (key, value) -> Currency in
@@ -50,6 +51,5 @@ final class CurrenciesService: CurrenciesServiceProtocol {
                 }
             }
         }
-        task.start()
     }
 }

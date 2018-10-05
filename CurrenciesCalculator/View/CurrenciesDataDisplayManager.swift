@@ -50,7 +50,7 @@ extension CurrenciesDataDisplayManager: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CurrenciesTableViewCell.self), for: indexPath) as? CurrenciesTableViewCell else {
-            fatalError("Unavailable to dequeue cell")
+            fatalError("Unable to dequeue cell")
         }
         let model = dataSource[indexPath.row]
         cell.configure(with: model)

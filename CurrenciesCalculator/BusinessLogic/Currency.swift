@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Currency {
+struct Currency: Equatable {
     let name: String
     let multiplier: Double
 }

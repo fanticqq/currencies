@@ -10,11 +10,12 @@ import Foundation
 
 final class CurrenciesCalculatorPresenter {
 	weak var view: CurrenciesCalculatorViewInput?
-	var interactor: CurrenciesCalculatorInteractorInput!
+	private let interactor: CurrenciesCalculatorInteractorInput
     private var selectedCurrency: Currency
     private var inputValue: Double
 
-    init(selectedCurrency: Currency) {
+    init(selectedCurrency: Currency, interactor: CurrenciesCalculatorInteractorInput) {
+        self.interactor = interactor
         self.selectedCurrency = selectedCurrency
         self.inputValue = selectedCurrency.multiplier
     }

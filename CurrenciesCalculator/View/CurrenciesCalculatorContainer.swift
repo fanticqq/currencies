@@ -12,14 +12,11 @@ final class CurrenciesCalculatorContainer {
 
 	class func assemble() -> UIViewController {
 		let viewController = CurrenciesCalculatorViewController()
-        let presenter = CurrenciesCalculatorPresenter(selectedCurrency: Currency(name: "EUR", multiplier: 1))
-		let interactor = CurrenciesCalculatorInteractor()
+        let interactor = CurrenciesCalculatorInteractor()
+        let presenter = CurrenciesCalculatorPresenter(selectedCurrency: Currency(name: "EUR", multiplier: 1), interactor: interactor)
 
 		viewController.output =  presenter
-
 		presenter.view = viewController
-		presenter.interactor = interactor
-
 		interactor.output = presenter
 
 		return viewController

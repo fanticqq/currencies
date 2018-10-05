@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		39849A0B2167EA33005AE113 /* Sampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39849A0A2167EA33005AE113 /* Sampler.swift */; };
+		39849A0E21680650005AE113 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39849A0D21680650005AE113 /* Endpoint.swift */; };
+		39849A11216806B7005AE113 /* NetworkClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39849A10216806B7005AE113 /* NetworkClientMock.swift */; };
+		39849A15216808FA005AE113 /* DummyJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 39849A14216808FA005AE113 /* DummyJSON.json */; };
+		39849A1721680929005AE113 /* JSONProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39849A1621680929005AE113 /* JSONProvider.swift */; };
+		39849A1921680BA3005AE113 /* EntityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39849A1821680BA3005AE113 /* EntityProvider.swift */; };
+		39849A1C21680FCB005AE113 /* CurrenciesCalculatorPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39849A1B21680FCB005AE113 /* CurrenciesCalculatorPresenterTests.swift */; };
+		39849A1F21681074005AE113 /* CurrenciesCalculatorInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39849A1E21681074005AE113 /* CurrenciesCalculatorInteractorMock.swift */; };
+		39849A21216811CC005AE113 /* CurrenciesCalculatorViewStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39849A20216811CC005AE113 /* CurrenciesCalculatorViewStub.swift */; };
 		BB038A39216767B00048F3F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB038A38216767B00048F3F5 /* AppDelegate.swift */; };
 		BB038A40216767B20048F3F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB038A3F216767B20048F3F5 /* Assets.xcassets */; };
 		BB038A43216767B20048F3F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB038A41216767B20048F3F5 /* LaunchScreen.storyboard */; };
@@ -39,6 +47,14 @@
 
 /* Begin PBXFileReference section */
 		39849A0A2167EA33005AE113 /* Sampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sampler.swift; sourceTree = "<group>"; };
+		39849A0D21680650005AE113 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		39849A10216806B7005AE113 /* NetworkClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientMock.swift; sourceTree = "<group>"; };
+		39849A14216808FA005AE113 /* DummyJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DummyJSON.json; sourceTree = "<group>"; };
+		39849A1621680929005AE113 /* JSONProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONProvider.swift; sourceTree = "<group>"; };
+		39849A1821680BA3005AE113 /* EntityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityProvider.swift; sourceTree = "<group>"; };
+		39849A1B21680FCB005AE113 /* CurrenciesCalculatorPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesCalculatorPresenterTests.swift; sourceTree = "<group>"; };
+		39849A1E21681074005AE113 /* CurrenciesCalculatorInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesCalculatorInteractorMock.swift; sourceTree = "<group>"; };
+		39849A20216811CC005AE113 /* CurrenciesCalculatorViewStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesCalculatorViewStub.swift; sourceTree = "<group>"; };
 		BB038A35216767B00048F3F5 /* CurrenciesCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrenciesCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB038A38216767B00048F3F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB038A3F216767B20048F3F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,6 +96,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39849A0C21680645005AE113 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				BB038A71216792CF0048F3F5 /* NetworkClient.swift */,
+				39849A0D21680650005AE113 /* Endpoint.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		39849A0F2168068F005AE113 /* TestDoubles */ = {
+			isa = PBXGroup;
+			children = (
+				39849A10216806B7005AE113 /* NetworkClientMock.swift */,
+			);
+			path = TestDoubles;
+			sourceTree = "<group>";
+		};
+		39849A12216808D0005AE113 /* ServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				39849A0F2168068F005AE113 /* TestDoubles */,
+				BB038A4D216767B30048F3F5 /* CurrenciesCalculatorTests.swift */,
+			);
+			path = ServiceTests;
+			sourceTree = "<group>";
+		};
+		39849A13216808DF005AE113 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				39849A14216808FA005AE113 /* DummyJSON.json */,
+				39849A1621680929005AE113 /* JSONProvider.swift */,
+				39849A1821680BA3005AE113 /* EntityProvider.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		39849A1A21680FAC005AE113 /* PresenterTests */ = {
+			isa = PBXGroup;
+			children = (
+				39849A1D2168106A005AE113 /* TestDoubles */,
+				39849A1B21680FCB005AE113 /* CurrenciesCalculatorPresenterTests.swift */,
+			);
+			path = PresenterTests;
+			sourceTree = "<group>";
+		};
+		39849A1D2168106A005AE113 /* TestDoubles */ = {
+			isa = PBXGroup;
+			children = (
+				39849A1E21681074005AE113 /* CurrenciesCalculatorInteractorMock.swift */,
+				39849A20216811CC005AE113 /* CurrenciesCalculatorViewStub.swift */,
+			);
+			path = TestDoubles;
+			sourceTree = "<group>";
+		};
 		BB038A2C216767B00048F3F5 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +171,7 @@
 		BB038A37216767B00048F3F5 /* CurrenciesCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				39849A0C21680645005AE113 /* Core */,
 				BB038A6E216790870048F3F5 /* BusinessLogic */,
 				BB038A6121678FAB0048F3F5 /* View */,
 				BB038A38216767B00048F3F5 /* AppDelegate.swift */,
@@ -114,7 +185,9 @@
 		BB038A4C216767B30048F3F5 /* CurrenciesCalculatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				BB038A4D216767B30048F3F5 /* CurrenciesCalculatorTests.swift */,
+				39849A13216808DF005AE113 /* Resources */,
+				39849A1A21680FAC005AE113 /* PresenterTests */,
+				39849A12216808D0005AE113 /* ServiceTests */,
 				BB038A4F216767B30048F3F5 /* Info.plist */,
 			);
 			path = CurrenciesCalculatorTests;
@@ -148,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				BB038A6F2167909D0048F3F5 /* Currency.swift */,
-				BB038A71216792CF0048F3F5 /* NetworkClient.swift */,
 				BB038A7321679F3D0048F3F5 /* CurrenciesService.swift */,
 				BB038A7521679F910048F3F5 /* Result.swift */,
 				39849A0A2167EA33005AE113 /* Sampler.swift */,
@@ -246,6 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39849A15216808FA005AE113 /* DummyJSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +339,7 @@
 				BB038A702167909D0048F3F5 /* Currency.swift in Sources */,
 				39849A0B2167EA33005AE113 /* Sampler.swift in Sources */,
 				BB038A6A21678FC40048F3F5 /* CurrenciesCalculatorViewController.swift in Sources */,
+				39849A0E21680650005AE113 /* Endpoint.swift in Sources */,
 				BB038A6C21678FC40048F3F5 /* CurrenciesCalculatorInteractor.swift in Sources */,
 				BB038A72216792CF0048F3F5 /* NetworkClient.swift in Sources */,
 				BB038A6D21678FC40048F3F5 /* CurrenciesCalculatorContainer.swift in Sources */,
@@ -279,6 +353,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB038A4E216767B30048F3F5 /* CurrenciesCalculatorTests.swift in Sources */,
+				39849A21216811CC005AE113 /* CurrenciesCalculatorViewStub.swift in Sources */,
+				39849A11216806B7005AE113 /* NetworkClientMock.swift in Sources */,
+				39849A1721680929005AE113 /* JSONProvider.swift in Sources */,
+				39849A1F21681074005AE113 /* CurrenciesCalculatorInteractorMock.swift in Sources */,
+				39849A1C21680FCB005AE113 /* CurrenciesCalculatorPresenterTests.swift in Sources */,
+				39849A1921680BA3005AE113 /* EntityProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
